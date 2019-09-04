@@ -2,8 +2,9 @@
 
 # Author      : BALAJI POTHULA <balaji.pothula@techie.com>,
 # Date        : 16 August 2019,
-# Description : Installing sonar qube on rhel.
+# Description : Installing SonarQube from static binaries.
 
+# installing unzip.
 sudo yum -y install unzip
 
 # https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-6.7.7.zip
