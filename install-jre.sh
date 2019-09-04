@@ -1,10 +1,17 @@
-curl -JL https://download.oracle.com/otn/java/jdk/8u221-b11/230deb18db3e4014bb8e3e8324f81b43/server-jre-8u221-linux-x64.tar.gz?AuthParam=1567318300_74437d89e5554b3e2162c5b5dd9c8c2c -o $HOME/jre.tar.gz && \
-tar -xzf jre.tar.gz -C $HOME                                && \
-mv      $HOME/jdk* $HOME/jreroot                            && \
-rm  -rf $HOME/jre.tar.gz                                    && \
-rm  -rf $HOME/jreroot/man                                   && \
-find    $HOME/jreroot -maxdepth 2 -delete -type f ".txt"    && \
-find    $HOME/jreroot -maxdepth 2 -delete -type f ".html"   && \
-echo "export PATH=$PATH:$HOME/jreroot/bin" >> $HOME/.bashrc && \
-echo "export JRE_HOME=$HOME/jreroot/jre"   >> $HOME/.bashrc && \
+#!/bin/bash
+
+# Author      : BALAJI POTHULA <balaji.pothula@techie.com>,
+# Date        : 04 September 2019,
+# Description : Installing Java (JRE) from static binaries.
+
+curl -JL https://github.com/frekele/oracle-java/releases/download/8u212-b10/jre-8u212-linux-x64.tar.gz -o $HOME/jre.tar.gz && \
+tar  -xzf $HOME/jre.tar.gz -C $HOME                                                                                        && \
+rm   -rf  $HOME/jre.tar.gz                                                                                                 && \
+mv        $HOME/jre* $HOME/java                                                                                            && \
+find      $HOME/java -maxdepth 2 -name "*.txt"  -type f -delete                                                            && \
+find      $HOME/java -maxdepth 2 -name "*.html" -type f -delete                                                            && \
+rm   -rf  $HOME/java/{COPYRIGHT,LICENSE,README,release}                                                                    && \
+rm   -rf  $HOME/java/man                                                                                                   && \
+echo "export PATH=$PATH:$HOME/java/bin" >> $HOME/.bashrc                                                                   && \
+echo "export JRE_HOME=$HOME/java" >> $HOME/.bashrc                                                                         && \
 exec $BASH
