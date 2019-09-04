@@ -4,7 +4,6 @@
 # Date        : 16 August 2019,
 # Description : Installing NexusOSS2 from static binaries.
 
-
 curl -JL https://download.sonatype.com/nexus/oss/nexus-latest-bundle.tar.gz -o $HOME/nexus.tar.gz && \
 tar  -xzf $HOME/nexus.tar.gz -C $HOME                                                             && \
 rm   -rf  $HOME/nexus.tar.gz                                                                      && \
