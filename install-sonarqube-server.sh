@@ -9,7 +9,9 @@ sudo yum -y install unzip
 # https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-6.7.7.zip
 # https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.2.1.zip
 
-# sed -i 's/#sonar.embeddedDatabase.port=/sonar.embeddedDatabase.port=/'   $HOME/sonarqube/conf/sonar.properties && \
+<<comment
+sed -i 's/#sonar.embeddedDatabase.port=/sonar.embeddedDatabase.port=/'     $HOME/sonarqube/conf/sonar.properties && \
+comment
 
 # sonarqube downloading, extracting and running.
 curl -J -L https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.2.1.zip -o $HOME/sonarqube.zip    && \
