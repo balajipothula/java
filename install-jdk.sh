@@ -1,12 +1,20 @@
+#!/bin/bash
 
+# Author      : BALAJI POTHULA <balaji.pothula@techie.com>,
+# Date        : 04 September 2019,
+# Description : Installing Java (JDK) from static binaries.
 
-curl -JL https://download.oracle.com/otn/java/jdk/8u221-b11/230deb18db3e4014bb8e3e8324f81b43/jdk-8u221-linux-x64.tar.gz?AuthParam=1567314397_adbc973545544b7b0de82cf304aa21ce -o $HOME/jdk.tar.gz && \
-tar -xzf jdk.tar.gz -C $HOME                                 && \
-rm -rf $HOME/jdk.tar.gz                                      && \
-mv     $HOME/jdk* $HOME/javaroot                             && \
-rm -rf $HOME/javaroot/{man,src.zip,javafx-src.zip}           && \
-find   $HOME/javaroot -maxdepth 2 -delete -type f ".txt"     && \
-find   $HOME/javaroot -maxdepth 2 -delete -type f ".html"    && \
-echo "export PATH=$PATH:$HOME/javaroot/bin" >> $HOME/.bashrc && \
-echo "export JAVA_HOME=$HOME/javaroot"      >> $HOME/.bashrc && \
+curl -JL https://github.com/frekele/oracle-java/releases/download/8u212-b10/jdk-8u212-linux-x64.tar.gz -o $HOME/jdk.tar.gz && \
+tar  -xzf $HOME/jdk.tar.gz -C $HOME                                                                                        && \
+rm   -rf  $HOME/jdk.tar.gz                                                                                                 && \
+mv        $HOME/jdk* $HOME/java                                                                                            && \
+find      $HOME/java -maxdepth 2 -name "*.txt"  -type f -delete                                                            && \
+find      $HOME/java -maxdepth 2 -name "*.html" -type f -delete                                                            && \
+find      $HOME/java -maxdepth 2 -name "*.zip"  -type f -delete                                                            && \
+rm   -rf  $HOME/java/{COPYRIGHT,LICENSE,release}                                                                           && \
+rm   -rf  $HOME/java/man                                                                                                   && \
+rm   -rf  $HOME/java/jre/{COPYRIGHT,LICENSE,README}                                                                        && \
+echo "export PATH=$PATH:$HOME/java/bin" >> $HOME/.bashrc                                                                   && \
+echo "export JDK_HOME=$HOME/java" >> $HOME/.bashrc                                                                         && \
+echo "export JRE_HOME=$HOME/java/jre" >> $HOME/.bashrc                                                                     && \
 exec $BASH
