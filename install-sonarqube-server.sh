@@ -25,4 +25,4 @@ rm    -rf $HOME/sonarqube/bin/{jsw-license,linux-x86-32,macosx*,windows*}       
 sed -i 's/#sonar.jdbc.username=/sonar.jdbc.username=sonarqube/'            $HOME/sonarqube/conf/sonar.properties && \
 sed -i 's/#sonar.jdbc.password=/sonar.jdbc.password=sonarqube123/'         $HOME/sonarqube/conf/sonar.properties && \
 sed -i 's/#sonar.jdbc.url=jdbc:postgresql/sonar.jdbc.url=jdbc:postgresql/' $HOME/sonarqube/conf/sonar.properties && \
-sh       $HOME/sonarqube/bin/linux-x86-64/sonar.sh start
+sh        $HOME/sonarqube/bin/linux-x86-64/sonar.sh start
