@@ -2,7 +2,7 @@
 
 # Author      : BALAJI POTHULA <balaji.pothula@techie.com>,
 # Date        : 16 August 2019,
-# Description : Installing nexus on rhel.
+# Description : Installing NexusOSS2 from static binaries.
 
 
 curl -JL https://download.sonatype.com/nexus/oss/nexus-latest-bundle.tar.gz -o $HOME/nexus.tar.gz && \
