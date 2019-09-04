@@ -12,5 +12,5 @@ find      $HOME/tomcat -name "*.md"  -type f -delete                            
 find      $HOME/tomcat -name "*.txt" -type f -delete                                                                          && \
 find      $HOME/tomcat -name "*.bat" -type f -delete                                                                          && \
 rm   -rf  $HOME/tomcat/{LICENSE,NOTICE,RELEASE-NOTES}                                                                         && \
-rm   -rf  $HOME/tomcat/webapps/{docs,examples,host-manager}
+rm   -rf  $HOME/tomcat/webapps/{docs,examples,host-manager}                                                                   && \
 sh        $HOME/tomcat/bin/startup.sh
