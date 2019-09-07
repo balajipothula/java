@@ -11,6 +11,7 @@ rm  -rf  $HOME/tomcat.tar.gz                                                    
 find     $HOME/tomcat     -maxdepth 1 -name "*.md"  -type f -delete                                                           && \
 find     $HOME/tomcat     -maxdepth 1 -name "*.txt" -type f -delete                                                           && \
 find     $HOME/tomcat/bin -maxdepth 1 -name "*.bat" -type f -delete                                                           && \
-rm  -rf  $HOME/tomcat/webapps/{docs,host-manager,manager,ROOT}                                                                && \
+rm  -rf  $HOME/tomcat/{LICENSE,NOTICE,RELEASE-NOTES}                                                                          && \
+rm  -rf  $HOME/tomcat/webapps/{docs,examples,host-manager,manager,ROOT}                                                       && \                                                               && \
 curl -JL https://updates.jenkins-ci.org/latest/jenkins.war -o $HOME/tomcat/webapps/ROOT.war                                   && \
 sh       $HOME/tomcat/bin/startup.sh
